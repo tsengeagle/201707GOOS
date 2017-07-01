@@ -17,7 +17,7 @@ namespace GOOS_Sample.Controllers
         {
             _service = service;
         }
-        
+
         // GET: Budget
         public ActionResult Add()
         {
@@ -32,7 +32,6 @@ namespace GOOS_Sample.Controllers
 
             _service.Create(model);
 
-            ViewBag.Message = "added successfully";
             return View(model);
         }
     }

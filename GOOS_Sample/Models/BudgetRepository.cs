@@ -13,5 +13,11 @@ namespace GOOS_Sample.Models
             db.Budgets.Add(model);
             db.SaveChanges();
         }
+
+        public Budgets Read(Func<Budgets, bool> predict)
+        {
+            var db=new Models.GOOSEntities();
+            return db.Budgets.Find(predict);
+        }
     }
 }
