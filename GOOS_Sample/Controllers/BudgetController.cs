@@ -24,7 +24,6 @@ namespace GOOS_Sample.Controllers
 
     public class BudgetAddViewModel
     {
-
         public int Amount { get; set; }
         public string Month { get; set; }
     }
