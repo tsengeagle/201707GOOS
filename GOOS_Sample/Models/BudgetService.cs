@@ -17,5 +17,8 @@ namespace GOOS_Sample.Models
         {
             _budgetRepository.Save(new Budgets(){Amount = budgetAddViewModel.Amount,YearMonth = budgetAddViewModel.Month});
         }
+
+        public event EventHandler Updated;
+        public event EventHandler Created;
     }
 }

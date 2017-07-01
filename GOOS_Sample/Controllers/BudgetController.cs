@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Web;
 using System.Web.Mvc;
 using GOOS_Sample.Models;
@@ -26,6 +27,9 @@ namespace GOOS_Sample.Controllers
         [HttpPost]
         public ActionResult Add(BudgetAddViewModel model)
         {
+            _service.Created += (sender, e) => { ViewBag.Message = "added successfully"; };
+            _service.Updated += (sender, e) => { ViewBag.Message = "updated successfully"; };
+
             _service.Create(model);
 
             ViewBag.Message = "added successfully";
