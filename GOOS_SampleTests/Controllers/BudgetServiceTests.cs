@@ -13,7 +13,7 @@ namespace GOOS_SampleTests.Controllers
         private IRepository<Budgets> _budgetRepository=Substitute.For<IRepository<Budgets>>();
 
         [TestMethod]
-        public void TestBudgetsSave()
+        public void CreateTest_should_create_new_budget()
         {
             _service=new BudgetService(_budgetRepository);
             _service.Create(new BudgetAddViewModel() { Amount = 1000, Month = "2017/01"});
