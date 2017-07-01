@@ -10,7 +10,7 @@ namespace GOOS_SampleTests.Controllers
     public class BudgetServiceTests
     {
         private IBudgetService _service;
-        private IRepository<Budgets> _budgetRepository;
+        private IRepository<Budgets> _budgetRepository=Substitute.For<IRepository<Budgets>>();
 
         [TestMethod]
         public void TestBudgetsSave()
