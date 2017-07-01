@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using FluentAssertions;
 using GOOS_Sample.Controllers;
@@ -46,7 +47,9 @@ namespace GOOS_SampleTests.Steps
         public void ThenItShouldExistABudgetRecordInBudgetTable(Table table)
         {
             var db=new TestModels.TestGOOSEntities();
-            table.CompareToSet(db.Budgets);
+            var budget = db.Budgets.FirstOrDefault();
+            budget.Should().NotBeNull();
+            table.CompareToInstance(budget);
 
         }
     }
