@@ -4,6 +4,7 @@
 	I want to be told the sum of two numbers
 
 @web
+@CleanBudget
 Scenario: Success add a budget
 
 Given go to adding budget page

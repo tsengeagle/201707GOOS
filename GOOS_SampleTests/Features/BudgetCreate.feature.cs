@@ -72,17 +72,19 @@ namespace GOOS_SampleTests.Features
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Success add a budget")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BudgetCreate")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("web")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CleanBudget")]
         public virtual void SuccessAddABudget()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Success add a budget", new string[] {
-                        "web"});
-#line 7
+                        "web",
+                        "CleanBudget"});
+#line 8
 this.ScenarioSetup(scenarioInfo);
-#line 9
-testRunner.Given("go to adding budget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
-testRunner.When("I add a buget 2000 for \"2017-10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("go to adding budget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
+testRunner.When("I add a buget 2000 for \"2017-10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
 testRunner.Then("it should display \"added successfully\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

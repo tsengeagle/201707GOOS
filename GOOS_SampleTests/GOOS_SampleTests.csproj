@@ -139,7 +139,7 @@
     <Compile Include="PageObjects\BudgetCreatePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\BudgetControllerSteps.cs" />
-    <Compile Include="Steps\CommonSteps.cs" />
+    <Compile Include="Steps\Hooks.cs" />
     <Compile Include="Steps\SetAccountSteps.cs" />
     <Compile Include="Steps\BudgetCreateSteps.cs" />
     <Compile Include="TestModels\Budgets.cs">
