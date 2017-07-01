@@ -85,9 +85,9 @@ this.ScenarioSetup(scenarioInfo);
                         "2000",
                         "2017-02"});
 #line 6
-        testRunner.When("add a budget", ((string)(null)), table1, "When ");
+testRunner.When("add a budget", ((string)(null)), table1, "When ");
 #line 9
-        testRunner.Then("ViewBag should have a message for adding successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("ViewBag should have a message for adding successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Amount",
@@ -96,7 +96,50 @@ this.ScenarioSetup(scenarioInfo);
                         "2000",
                         "2017-02"});
 #line 10
-        testRunner.And("it should exist a budget record in budget table", ((string)(null)), table2, "And ");
+testRunner.And("it should exist a budget record in budget table", ((string)(null)), table2, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Update a budget record")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BudgetController")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CleanBudget")]
+        public virtual void UpdateABudgetRecord()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update a budget record", new string[] {
+                        "CleanBudget"});
+#line 15
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Amount",
+                        "YearMonth"});
+            table3.AddRow(new string[] {
+                        "1000",
+                        "2017-02"});
+#line 16
+testRunner.Given("budget table has a budget", ((string)(null)), table3, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Amount",
+                        "Month"});
+            table4.AddRow(new string[] {
+                        "2000",
+                        "2017-02"});
+#line 19
+testRunner.When("add a budget", ((string)(null)), table4, "When ");
+#line 22
+testRunner.Then("ViewBag should have a message for updating successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Amount",
+                        "YearMonth"});
+            table5.AddRow(new string[] {
+                        "2000",
+                        "2017-02"});
+#line 23
+testRunner.And("it should exist a budget record in budget table", ((string)(null)), table5, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

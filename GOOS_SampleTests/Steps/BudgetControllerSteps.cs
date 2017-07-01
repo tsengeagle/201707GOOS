@@ -14,9 +14,10 @@ namespace GOOS_SampleTests.Steps
     [Binding]
     public class BudgetControllerSteps
     {
-        private BudgetController _budgetController=Hooks.UnityContainer.Resolve<BudgetController>();
+        private BudgetController _budgetController = Hooks.UnityContainer.Resolve<BudgetController>();
+        private readonly InsertData _insertData = new InsertData();
 
-         [When(@"add a budget")]
+        [When(@"add a budget")]
         public void WhenAddABudget(Table table)
         {
             var model = table.CreateInstance<BudgetAddViewModel>();
@@ -46,6 +47,20 @@ namespace GOOS_SampleTests.Steps
             var budget = db.Budgets.FirstOrDefault();
             budget.Should().NotBeNull();
             table.CompareToInstance(budget);
+        }
+
+        [Then(@"ViewBag should have a message for updating successfully")]
+        public void ThenViewBagShouldHaveAMessageForUpdatingSuccessfully()
+        {
+            var result = ScenarioContext.Current.Get<ActionResult>() as ViewResult;
+            string message = result.ViewBag.Message;
+            message.Should().Be(GetUpdatingSuccessfullyMessage());
+
+        }
+
+        private string GetUpdatingSuccessfullyMessage()
+        {
+            return "updated successfully";
         }
     }
 }
