@@ -14,7 +14,7 @@ namespace GOOS_SampleTests.Steps
     [Binding]
     public class BudgetControllerSteps
     {
-        private BudgetController _budgetController=CommonSteps.UnityContainer.Resolve<BudgetController>();
+        private BudgetController _budgetController=Hooks.UnityContainer.Resolve<BudgetController>();
 
          [When(@"add a budget")]
         public void WhenAddABudget(Table table)

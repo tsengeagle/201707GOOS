@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 namespace GOOS_SampleTests.Steps
 {
     [Binding]
-    public class CommonSteps
+    public class Hooks
     {
         public static IUnityContainer UnityContainer
         {
