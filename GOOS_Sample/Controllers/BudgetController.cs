@@ -12,14 +12,14 @@ namespace GOOS_Sample.Controllers
     {
         private IBudgetService _service;
 
-        public BudgetController()
-        {
-            _service = new BudgetService();
-        }
-
         public BudgetController(IBudgetService service)
         {
             _service = service;
+        }
+
+        public BudgetController()
+        {
+            _service=new BudgetService();
         }
 
         // GET: Budget
@@ -27,6 +27,7 @@ namespace GOOS_Sample.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Add(BudgetAddViewModel model)
         {
