@@ -7,10 +7,10 @@ namespace GOOS_SampleTests.Steps
     [Binding]
     public class CommonSteps
     {
-        [BeforeScenario()]
-        public void CleanDB()
-        {
+      
 
+        public static void CleanTestData()
+        {
             var tags = ScenarioContext.Current.ScenarioInfo.Tags
                 .Where(x => x.StartsWith("Clean"))
                 .Select(x => x.Replace("Clean", ""));
@@ -25,7 +25,20 @@ namespace GOOS_SampleTests.Steps
                     dbcontext.Database.ExecuteSqlCommand($"TRUNCATE TABLE [{tag}s]");
                 }
                 dbcontext.SaveChangesAsync();
-            } 
+            }
+
+        }
+
+        [BeforeScenario()]
+        public void BeforeScenarioCleanData()
+        {
+            CleanTestData();
+        }
+
+        [AfterFeature()]
+        public static void AfterFeature()
+        {
+            CleanTestData();
         }
 
         [Scope(Tag = "web")]
