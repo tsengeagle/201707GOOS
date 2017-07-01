@@ -18,7 +18,7 @@ namespace GOOS_SampleTests.PageObjects
 
         public BudgetCreatePage Month(string yearMonth)
         {
-            I.Enter(yearMonth).In("#yearmonth");
+            I.Enter(yearMonth).In("#month");
             return this;
         }
 
