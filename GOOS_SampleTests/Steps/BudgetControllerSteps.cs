@@ -46,11 +46,10 @@ namespace GOOS_SampleTests.Steps
         [Then(@"it should exist a budget record in budget table")]
         public void ThenItShouldExistABudgetRecordInBudgetTable(Table table)
         {
-            var db=new TestModels.TestGOOSEntities();
+            var db = new TestModels.TestGOOSEntities();
             var budget = db.Budgets.FirstOrDefault();
             budget.Should().NotBeNull();
             table.CompareToInstance(budget);
-
         }
     }
 }
