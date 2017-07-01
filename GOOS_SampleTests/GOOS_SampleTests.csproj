@@ -118,8 +118,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BudgetCreate.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\SetAccount.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SetAccount.feature</DependentUpon>
+    </Compile>
     <Compile Include="PageObjects\BudgetCreatePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\CommonSteps.cs" />
+    <Compile Include="Steps\SetAccountSteps.cs" />
     <Compile Include="Steps\BudgetCreateSteps.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +136,10 @@
     <None Include="Features\BudgetCreate.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BudgetCreate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SetAccount.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SetAccount.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
