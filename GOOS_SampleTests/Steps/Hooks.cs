@@ -1,5 +1,8 @@
-﻿using System.Linq;
+﻿using System.Drawing.Printing;
+using System.Linq;
 using FluentAutomation;
+using GOOS_Sample.Models;
+using Microsoft.Practices.Unity;
 using TechTalk.SpecFlow;
 
 namespace GOOS_SampleTests.Steps
@@ -7,7 +10,20 @@ namespace GOOS_SampleTests.Steps
     [Binding]
     public class CommonSteps
     {
-      
+        public static IUnityContainer UnityContainer
+        {
+            get;
+            set;
+        }
+
+        [BeforeTestRun()]
+        public static void RegisterDIContainer()
+        {
+
+            UnityContainer = new UnityContainer();
+            UnityContainer.RegisterType<IBudgetService, BudgetService>();
+
+        }
 
         public static void CleanTestData()
         {

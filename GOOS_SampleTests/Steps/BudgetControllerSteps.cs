@@ -5,6 +5,7 @@ using FluentAssertions;
 using GOOS_Sample.Controllers;
 using GOOS_Sample.Models;
 using GOOS_Sample.ViewModels;
+using Microsoft.Practices.Unity;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -13,16 +14,9 @@ namespace GOOS_SampleTests.Steps
     [Binding]
     public class BudgetControllerSteps
     {
-        private BudgetController _budgetController;
+        private BudgetController _budgetController=CommonSteps.UnityContainer.Resolve<BudgetController>();
 
-        [BeforeScenario()]
-        public void BeforeScenario()
-        {
-            this._budgetController = new BudgetController(new BudgetService());
-        }
-
-
-        [When(@"add a budget")]
+         [When(@"add a budget")]
         public void WhenAddABudget(Table table)
         {
             var model = table.CreateInstance<BudgetAddViewModel>();
