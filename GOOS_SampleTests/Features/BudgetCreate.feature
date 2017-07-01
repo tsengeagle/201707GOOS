@@ -19,4 +19,4 @@ Given budget table has a budget
 | 1000   | 2017-01   |
 Given go to adding budget page
 When I add a buget 2000 for "2017-01"
-Then it should display "added successfully"
+Then it should display "updated successfully"

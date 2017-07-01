@@ -9,15 +9,27 @@ namespace GOOS_Sample.Models
     {
         public void Save(Budgets model)
         {
+            
             var db = new Models.GOOSEntities();
-            db.Budgets.Add(model);
+
+            var budgetFromDb = db.Budgets.FirstOrDefault(x => x.YearMonth == model.YearMonth);
+
+            if (budgetFromDb == null)
+            {
+                db.Budgets.Add(model);
+            }
+            else
+            {
+                budgetFromDb.Amount = model.Amount;
+            }
+
             db.SaveChanges();
         }
 
         public Budgets Read(Func<Budgets, bool> predict)
         {
             var db=new Models.GOOSEntities();
-            return db.Budgets.Find(predict);
+            return db.Budgets.FirstOrDefault(predict);
         }
     }
 }

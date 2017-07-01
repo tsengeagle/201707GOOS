@@ -116,7 +116,7 @@ testRunner.Given("go to adding budget page", ((string)(null)), ((TechTalk.SpecFl
 #line 21
 testRunner.When("I add a buget 2000 for \"2017-01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
-testRunner.Then("it should display \"added successfully\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("it should display \"updated successfully\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
