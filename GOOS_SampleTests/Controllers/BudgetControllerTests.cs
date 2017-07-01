@@ -2,6 +2,7 @@
 using FluentAssertions;
 using GOOS_Sample.Controllers;
 using GOOS_Sample.Models;
+using GOOS_Sample.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 

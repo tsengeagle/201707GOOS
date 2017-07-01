@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using FluentAssertions;
 using GOOS_Sample.Controllers;
+using GOOS_Sample.ViewModels;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 

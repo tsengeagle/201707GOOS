@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GOOS_Sample.Models;
+using GOOS_Sample.ViewModels;
 
 namespace GOOS_Sample.Controllers
 {
@@ -14,6 +14,7 @@ namespace GOOS_Sample.Controllers
 
         public BudgetController()
         {
+            _service = new BudgetService();
         }
 
         public BudgetController(IBudgetService service)
@@ -29,20 +30,10 @@ namespace GOOS_Sample.Controllers
         [HttpPost]
         public ActionResult Add(BudgetAddViewModel model)
         {
-            //var db = new Models.GOOSEntities();
-            //db.Budgets.Add(new Budgets() { Amount = model.Amount, YearMonth = model.Month });
-            //db.SaveChanges();
-
             _service.Create(model);
 
             ViewBag.Message = "added successfully";
             return View(model);
         }
-    }
-
-    public class BudgetAddViewModel
-    {
-        public int Amount { get; set; }
-        public string Month { get; set; }
     }
 }
