@@ -6,6 +6,11 @@ namespace GOOS_Sample.Models
 {
     public class BudgetService : IBudgetService
     {
+        public BudgetService(IRepository<Budgets> budgetRepository)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Create(BudgetAddViewModel budgetAddViewModel)
         {
             var db = new Models.GOOSEntities();
